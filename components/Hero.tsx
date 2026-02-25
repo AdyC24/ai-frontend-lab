@@ -2,7 +2,12 @@
 
 import React from "react";
 
-const Hero: React.FC = () => {
+type HeroProps = {
+  title?: string;
+  description?: string;
+};
+
+const Hero: React.FC<HeroProps> = ({ title, description }) => {
   return (
     <section className="w-full bg-white">
       <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
@@ -10,13 +15,10 @@ const Hero: React.FC = () => {
         {/* Left Content */}
         <div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Authentic Indonesian Cuisine <br className="hidden md:block" />
-            with a Modern Touch
+            {title}
           </h1>
-
           <p className="mt-6 text-lg text-gray-600">
-            Experience the rich flavors of Nusantara served in a clean,
-            modern, and comfortable atmosphere for family and friends.
+            {description}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -47,3 +49,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+

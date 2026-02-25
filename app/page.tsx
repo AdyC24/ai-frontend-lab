@@ -6,7 +6,7 @@ export default function Home() {
       <Hero 
         title="Modern Cafe Experience"
         description="A cozy place for coffee and conversation."
-        background="dark"
+        background="light"
         primaryCta="Book a Table"
         secondaryCta="See Our Menu"
       />

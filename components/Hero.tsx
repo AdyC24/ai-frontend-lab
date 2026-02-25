@@ -19,29 +19,31 @@ const Hero: React.FC<HeroProps> = ({
   secondaryCta =  "View Menu", 
   imageUrl = "https://images.unsplash.com/photo-1604908554027-1d9c43e35a9b" 
 }) => {
-  const isDark = background === "dark";
+  const variants = {
+    light: {
+      section: "bg-white text-gray-900",
+      heading: "text-gray-900",
+      paragraph: "text-gray-600",
+    },
+    dark: {
+      section: "bg-gray-900 text-white",
+      heading: "text-white",
+      paragraph: "text-gray-300",
+    },
+  };
 
-  const sectionClass = isDark 
-    ? "bg-gray-900 text-white" 
-    : "bg-white text-gray-900";
-
-  const headingClass = isDark 
-    ? "text-white" : "text-gray-900";
-
-  const paragraphClass = isDark
-    ? "text-gray-300"
-    : "text-gray-600";
+  const variant = variants[background];
 
   return (
-    <section className={`w-full ${sectionClass}`}>
+    <section className={`w-full ${variant.section} relative`}>
       <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
         
         {/* Left Content */}
         <div>
-          <h1 className={`text-4xl md:text-5xl font-bold ${headingClass} leading-tight`}>
+          <h1 className={`text-4xl md:text-5xl font-bold ${variant.heading} leading-tight`}>
             {title}
           </h1>
-          <p className={`mt-6 text-lg ${paragraphClass}`}>
+          <p className={`mt-6 text-lg ${variant.paragraph}`}>
             {description}
           </p>
 

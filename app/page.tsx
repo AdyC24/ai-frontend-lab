@@ -4,8 +4,11 @@ export default function Home() {
   return (
     <main>
       <Hero 
-        title="Authentic Indonesian Cuisine with a Modern Touch"
-        description="Experience the rich flavors of Nusantara served in a clean, modern atmosphere for family and friends."
+        title="Modern Cafe Experience"
+        description="A cozy place for coffee and conversation."
+        background="dark"
+        primaryCta="Book a Table"
+        secondaryCta="See Our Menu"
       />
     </main>
   )
